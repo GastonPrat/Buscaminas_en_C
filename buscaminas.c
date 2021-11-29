@@ -164,6 +164,9 @@ void jugar_partida_nueva(int minas, int filas,int columnas, char **mapa_base, ch
             {
                 imprimir_minas(filas, columnas, mapa_base, tablero);
                 juego_perdido(filas, columnas, tablero);
+                rellenar_mapa_base(filas, columnas, mapa_base);
+                colocar_minas(filas, columnas, minas, mapa_base);
+                colocar_contadores(filas, columnas, mapa_base);
                 perdio = 0;
             }
             break;
@@ -213,6 +216,9 @@ void jugar_partida_nueva(int minas, int filas,int columnas, char **mapa_base, ch
                 {
                     copia_mapa_ganador(filas, columnas, tablero, mapa_base);
                     juego_ganado(filas, columnas, tablero);
+                    rellenar_mapa_base(filas, columnas, mapa_base);
+                    colocar_minas(filas, columnas, minas, mapa_base);
+                    colocar_contadores(filas, columnas, mapa_base);
                 }
                 break;
             }
